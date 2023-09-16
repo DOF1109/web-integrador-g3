@@ -1,17 +1,21 @@
-/* Fuente */
+/********** Fuente **********/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* Variables */
+
+/********** Variables **********/
 :root {
     --bg-color: #f2f2f2;
     --font-color: #4f5a61;
     --primary-color: #0073cf;
     --white: #ffffff;
     --black: #000000;
-    --shadow: 0 2px 6px rgba(0,0,0,.05);
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    --header-height: 4rem;
+    --picture-size: 9rem;
 }
 
-/* Estilos globales */
+
+/********** Estilos globales **********/
 * {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
@@ -20,6 +24,79 @@
 }
 
 body {
-    min-width: 100vh;
+    min-height: 100vh;
 }
 
+
+/********** Header **********/
+.header {
+    box-shadow: var(--shadow);
+    -webkit-box-shadow: var(--shadow);
+    -moz-box-shadow: var(--shadow);
+    height: var(--header-height);
+    padding: 0 2rem;
+    position: sticky;
+    z-index: 2;
+}
+
+.header h1 {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+/********** Main **********/
+.main {
+    background: var(--bg-color);
+    color: var(--font-color);
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+}
+
+.container-superior {
+    display: flex;
+    justify-content: space-around;
+    margin: auto 0;
+}
+
+.container-inferior {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto 0;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card .foto-perfil {
+    height: var(--picture-size);
+    width: var(--picture-size);
+    border-radius: 50%;
+}
+
+.card .nombre {
+    padding: 1rem;
+}
+
+.card .button {
+    border-radius: 2rem;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: .5rem 1rem;
+    transition: all .3s ease;
+}
+
+.card .button:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    cursor: pointer;
+    transition: all .3s ease;
+}
