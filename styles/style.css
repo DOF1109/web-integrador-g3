@@ -80,6 +80,7 @@ body {
     height: var(--picture-size);
     width: var(--picture-size);
     border-radius: 50%;
+    background-size: contain;
 }
 
 .card .nombre {
